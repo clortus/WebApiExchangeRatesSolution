@@ -1,0 +1,2 @@
+# WebApiExchangeRatesSolution
+ Testing task
