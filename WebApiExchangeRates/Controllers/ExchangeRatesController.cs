@@ -21,7 +21,9 @@ namespace WebApiExchangeRates.Controllers
         /// </summary>
         /// <param name="date">Дата, на которую нужно получить курс</param>
         /// <param name="currencyStr">Валюта, на которую необходимо получить курс</param>
-
+        /// <returns>
+        /// Вернет сериализованный ExchangeRateInfo в JsonResult.value
+        /// </returns>
         [HttpGet]
         public JsonResult GetByDateCurrency(DateTime date, string currencyStr)
         {
@@ -38,9 +40,9 @@ namespace WebApiExchangeRates.Controllers
         /// Данные всех доступные валюты
         /// </summary>
         /// <param name="date">Дата, на которую нужно получить курс</param>
-        /// <remarks>
-        /// Вернет массив с ExchangeRateInfo
-        /// </remarks>
+        /// <returns>
+        /// Вернет массив сериализованных ExchangeRateInfo в JsonResult.value
+        /// </returns>
         [HttpGet]
         public JsonResult GetAllByDate(DateTime date)
         {
