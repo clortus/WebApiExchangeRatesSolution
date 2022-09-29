@@ -24,7 +24,7 @@ namespace WebApiExchangeRates.Tests
         private static readonly string InvalidCurrency = "RUB";
 
         [Test]
-        public void GetAll_InvalidDate_BadRequest()
+        public void GetAllByDate_InvalidDate_BadRequest()
         {
 	        // arrange
 	        RestRequest request = new($"GetAllByDate?date={InvalidDate}", Method.Get);
@@ -38,7 +38,7 @@ namespace WebApiExchangeRates.Tests
         }
 
         [Test]
-        public void Get_InvalidDate_BadRequest()
+        public void GetByDateCurrency_InvalidDate_BadRequest()
         {
 	        // arrange
 	        RestRequest request = new($"GetByDateCurrency?date={InvalidDate}&currencyStr={ValidCurrency}", Method.Get);
@@ -52,7 +52,7 @@ namespace WebApiExchangeRates.Tests
         }
 
         [Test]
-        public void Get_InvalidCurrency_BadRequest()
+        public void GetByDateCurrency_InvalidCurrency_BadRequest()
         {
 	        // arrange
 	        RestRequest request = new($"GetByDateCurrency?date={ValidDate}&currencyStr={InvalidCurrency}", Method.Get);
@@ -66,7 +66,7 @@ namespace WebApiExchangeRates.Tests
         }
 
         [Test]
-        public void Get_ValidDateValidCurrency_Deserialisable()
+        public void GetByDateCurrency_ValidDateValidCurrency_Deserialisable()
         {
             // arrange
             RestRequest request = new($"GetByDateCurrency?date={ValidDate}&currencyStr={ValidCurrency}", Method.Get);
